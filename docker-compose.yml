@@ -1,0 +1,15 @@
+version: '3'
+services: 
+    web-app:
+        stdin_open: true
+        container_name: "Engine"
+        build: 
+            context: ./EngineX
+            dockerfile: Dockerfile
+        ports: 
+            - "80:80"
+        # volumes: 
+        #     - "/src/node_modules"
+        #     - "./BlackLife/ClientApp:/src"
+        environment:
+            - CHOKIDAR_USEPOLLING=true
